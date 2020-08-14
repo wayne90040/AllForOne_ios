@@ -20,18 +20,10 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
         // self.performSegue(withIdentifier: "toCityView", sender: self)
     }
     
-    //var sectionList = ["環境", "現在天氣", "油價", "台北UBike"]
-    // var underSectionList = ["新北UBike"] as [String]
     var sectionList = [String]()
     var underSectionList = [String]()
     var city: [String] = ["台北市中正區"]
-//     var city = [String]()
-    
     var location = CLLocationCoordinate2D(latitude: 120.0 , longitude: 0.0)
-    
-    // var loction = [["Longitude": 0, "Latitude": 0], ["Longitude": 121.5548065, "Latitude": 25.0287521]]
-    // var longitude: Double = 0.0
-    // var latitude: Double = 0.0
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! ViewController).index
@@ -53,14 +45,14 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
             if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "main") as? ViewController {
                 pageContentViewController.index = index
                 if userdefault.value(forKey: "sectionList") as? [String] == nil{
-                    userdefault.set(["環境", "現在天氣", "油價", "台北Bike", "天氣警報"], forKey: "sectionList")
+                    userdefault.set(["環境", "現在天氣", "油價", "台北Bike"], forKey: "sectionList")
                     pageContentViewController.tableViewSection = userdefault.value(forKey: "sectionList") as! [String]
                 }else{
                     pageContentViewController.tableViewSection = userdefault.value(forKey: "sectionList") as! [String]
                 }
                 
                 if userdefault.value(forKey: "underSectionList") as? [String] == nil{
-                    userdefault.set(["新竹Bike", "新北Bike", "苗栗Bike", "彰化Bike", "屏東Bike", "桃園Bike", "高雄Bike", "台南Bike", "台中Bike", "新北市停車位"], forKey: "underSectionList")
+                    userdefault.set([], forKey: "underSectionList")
                     pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
                 }else{
                     pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
@@ -81,16 +73,12 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
                 }
                 
                 if userdefault.value(forKey: "underSectionList") as? [String] == nil{
-                    userdefault.set(["新竹Bike", "新北Bike", "苗栗Bike", "彰化Bike", "屏東Bike", "桃園Bike", "高雄Bike", "台南Bike", "台中Bike", "新北市停車位"], forKey: "underSectionList")
+                    userdefault.set([], forKey: "underSectionList")
                     pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
                 }else{
                     pageContentViewController.tableViewSectionUnder = userdefault.value(forKey: "underSectionList") as! [String]
                 }
                 
-//                pageContentViewController.cityName = city[index]
-//                locationEncode(address: city[index])
-//                print(city[index])
-//                pageContentViewController.location = location
                 return pageContentViewController
             }
         }
@@ -124,35 +112,18 @@ class MainPageViewController: UIPageViewController, UIPageViewControllerDataSour
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // Segue 頁面傳值
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toSetting"{
-            let destViewController: TableViewSectionset = segue.destination as! TableViewSectionset
-            destViewController.sectionRow = sectionList
-            destViewController.sectionInsertRow = underSectionList
-        
-        }
-    }
-    */
     func locationEncode(address: String) {
         let geocoder = CLGeocoder()
         
         geocoder.geocodeAddressString(address, completionHandler: {
             (placemarks:[CLPlacemark]?, error:Error?) -> Void in
             
-            if error != nil {
-                print("错误：\(error!.localizedDescription))")
-                return
-            }
+            if error != nil{ return }
+            
             if let p = placemarks?[0]{
-                print("经度：\(p.location!.coordinate.longitude)")
                 self.location.longitude = p.location!.coordinate.longitude
-                print("纬度：\(p.location!.coordinate.latitude)")
                 self.location.latitude = p.location!.coordinate.latitude
-               print(self.location)
-            } else {
+            }else{
                 print("No placemarks!")
             }
         })

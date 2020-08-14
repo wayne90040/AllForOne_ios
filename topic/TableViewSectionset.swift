@@ -24,8 +24,7 @@ class TableViewSectionset: UITableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        // userdefault.set(sectionRow, forKey: "sectionList")
-        // userdefault.set(sectionInsertRow, forKey: "underSectionList")
+       
     }
     
     // MARK: - Table view data source
@@ -89,17 +88,11 @@ class TableViewSectionset: UITableViewController {
             let number = sectionRow[indexPath.row]
             sectionRow.remove(at: indexPath.row)
             sectionInsertRow.append(number)
-            
-            // userdefault.set(sectionRow, forKey: "sectionList")  // 添加 userdefault
-            // userdefault.set(sectionInsertRow, forKey: "underSectionList")
-            
             tableView.reloadData()
         }else if editingStyle == .insert{
             let number = sectionInsertRow[indexPath.row]
             sectionRow.append(number)
             sectionInsertRow.remove(at: indexPath.row)
-            // userdefault.set(sectionRow, forKey: "sectionList")
-            // userdefault.set(sectionInsertRow, forKey: "underSectionList")
             tableView.reloadData()
         }
     }

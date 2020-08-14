@@ -27,7 +27,6 @@ class SearchBarViewController: UIViewController, UITableViewDelegate, UITableVie
        
         // Do any additional setup after loading the view.
         
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,27 +40,23 @@ class SearchBarViewController: UIViewController, UITableViewDelegate, UITableVie
         }else{
             return cityArray.count
         }
-      
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         if searching{
             cell.textLabel!.text = searchArray[indexPath.row]
-
         }else{
             cell.textLabel!.text = cityArray[indexPath.row]
             cell.isHidden = true
         }
-      
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let curCell = tableView.cellForRow(at: indexPath)
-        let chooseCity = curCell?.textLabel?.text as! String
+        let chooseCity = (curCell?.textLabel?.text) ?? ""
         chooseCities.append(chooseCity)
         userdefault.set(chooseCities, forKey: "Cities")
        

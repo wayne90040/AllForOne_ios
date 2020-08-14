@@ -12,52 +12,18 @@ import Foundation
 
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, ViewControllerBaseDelegate{
     @IBOutlet weak var pageControl: UIPageControl!
-//    var aqi: NSDictionary = ["AQI": "", "AQIStatus": "", "PM2.5": "", "PM2.5Status": ""]
-    var envir: NSDictionary = ["city": "", "warning": "", "date": "", "time": ""]
-    var perWeather: NSDictionary=["city": "", "NowPoP": "", "NowWx": ""]
-    
- //   var weather: Weather = Weather()
-    var warning: Warning = Warning()
-    var parkNTPC: ParkNTPC = ParkNTPC()
-    // bikeMoudel
-    var taipeiBike: TaipeiBike = TaipeiBike()
-    var newtaipeiBike: NewTaipeiBike = NewTaipeiBike()
-    var hsinchuBike : HsinchuBike = HsinchuBike()
-    var miaoliBike : MiaoliBike = MiaoliBike()
-    var changhuaBike : ChanghuaBike = ChanghuaBike()
-    var pingtungBike : PingtungBike = PingtungBike()
-    var taoyuanBike : TaoyuanBike = TaoyuanBike()
-    var kaohsiungBike : KaohsiungBike = KaohsiungBike()
-    var tainanBike : TainanBike = TainanBike()
-    var taichungBike : TaichungBike = TaichungBike()
     
     var index: Int = 0
-    // TableView
-    var tableViewSection = [String]()
-    // var tableViewSection =  ["環境", "現在天氣", "油價", "台北UBike"]
-    var tableViewSectionUnder = [String]()
-    
-    
+    var tableViewSection = [String](), tableViewSectionUnder = [String]()
     // Moudel & Presenter
     var gasprice = GasPrice(), gaspricepresenter: GasPricePresenter?
     var bikes = Bikes(), bikepresenter: BikePresenter?, distance = Double()
     var aqi = AQI(), aqipresenter: AqiPresenter?
     var weather = Weather(), weatherpresenter: WeatherPresenter?
-   
-    
-    
-    var weatherPresenter: WeatherPresenter?
-    var environmentalWarningPresenter: EnvironmentalWarningPresenter?
-    var preweatherPresenter: PreWeatherPresenter?
-//    var taipeiBikePresenter: TaipeiBikePresenter?
-    var taipeiCloseBikePresenter: TaipeiCloseBikePresenter?
-    var parkPresenter: ParkPresenter?
-    var warningPresenter: WarningPresenter?
     
     var loadactivity = LoadActivity()
     var cityName: String = ""
-    
-    
+
     var refreshControl: UIRefreshControl! // 宣告元件
     let userdefault = UserDefaults.standard
     
@@ -72,7 +38,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     var location = CLLocationCoordinate2D(latitude: 0.0 , longitude: 0.0) {
         didSet {
-//            presenter()
+            postJson()
         }
     }
     
@@ -85,11 +51,9 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         registerCell()
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
-        
+    
         refreshControl = UIRefreshControl() // 初始化refresh元件
         mainTableView.addSubview(refreshControl)  // 加到tableview裡
-        //tableViewSection = userdefault.value(forKey: "Section") as! [String]
         
         // 定位相關設定
         locationManager.delegate = self //設定服務代理
@@ -116,7 +80,6 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
     
         locationEncode(address: cityName)
-        
         postJson()
     }
     
@@ -152,78 +115,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     @objc func weatherTapAction(){
         self.performSegue(withIdentifier: "toWeatherDetailNav", sender: nil)
     }
-/*
-    func presenter(){
-        
-//        gasPricePresenter = GasPricePresenter(delegate: self)
 
-//        aqiPresenter = AqiPresenter(delegate: self)
-//        aqiPresenter?.postAqi(Longitude: location.longitude, Latitude: location.latitude)
-        
-        weatherPresenter = WeatherPresenter(delegate: self)
-        weatherPresenter?.postWeather(Longitude: location.longitude, Latitude: location.latitude)
-        
-        environmentalWarningPresenter = EnvironmentalWarningPresenter(delegate: self)
-        environmentalWarningPresenter?.postEnvir(Longitude: location.longitude, Latitude: location.latitude)
-        
-        preweatherPresenter = PreWeatherPresenter(delegate: self)
-        preweatherPresenter?.postPreWeather(Longitude: location.longitude, Latitude: location.latitude)
-        
-        taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-        taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "Taipei")
-        
-        if tableViewSection.contains("新北Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "NewTaipei")
-        }
-        if tableViewSection.contains("新竹Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "Hsinchu")
-        }
-        if tableViewSection.contains("苗栗Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "MiaoliCounty")
-        }
-        if tableViewSection.contains("彰化Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "ChanghuaCounty")
-        }
-        if tableViewSection.contains("屏東Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "PingtungCounty")
-        }
-        if tableViewSection.contains("桃園Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "Taoyuan")
-        }
-        if tableViewSection.contains("高雄Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "Kaohsiung")
-        }
-        if tableViewSection.contains("台南Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "Tainan")
-        }
-        
-        if tableViewSection.contains("台中Bike"){
-            taipeiCloseBikePresenter = TaipeiCloseBikePresenter(delegate: self)
-            taipeiCloseBikePresenter?.getCloseBike(Longitude: location.longitude, Latitude: location.latitude, type: "1", city: "Taichung")
-        }
-        
-        if tableViewSection.contains("新北市停車位"){
-            parkPresenter = ParkPresenter(delegate: self)
-            parkPresenter?.getClosePark(Longitude: location.longitude, Latitude: location.latitude, contain: "1", type: "0")
-        }
-        
-        if tableViewSection.contains("天氣警報"){
-            warningPresenter = WarningPresenter(delegate: self)
-            warningPresenter?.getWarning(Longitude: location.longitude, Latitude: location.latitude)
-        }
-        
-        self.loadactivity.showActivityIndicator(self.view)
-    }
-    
- */
     
     // MARK: - TableView Delegate & DataSource
     
@@ -265,6 +157,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             cell.bikeView.layer.shadowOpacity = 0.7
             cell.bikeView.layer.shadowRadius = 5
             cell.bikeView.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0).cgColor
+            
             if bike.count > 0{
                 cell.cityName.text = "台北Bike"
                 cell.closeStationLbl.text? = bikes.bikes[0].StationName_zh
@@ -312,29 +205,9 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             
             cell.uviValue.text? = weather.H_UVI
             cell.uviStatusLabel.text = "test"
+            cell.temImage.image = UIImage(named: String("Green"))
             cell.temperatureValue.text = weather.TEMP
 
-/*
-            switch weather.tempNow {
-            default:
-                cell.temImage.image = UIImage(named: String("Green"))
-            }
-            
-            switch weather.uviStatus {
-            case "低量級":
-                cell.uviImage.image = UIImage(named: String("Green"))
-            case "中量級":
-                cell.uviImage.image = UIImage(named: String("Yellow"))
-            case "高量級":
-                cell.uviImage.image = UIImage(named: String("Red"))
-            case "過量級":
-                cell.uviImage.image = UIImage(named: String("Purple"))
-            case "危險級":
-                cell.uviImage.image = UIImage(named: String("Brown"))
-            default:
-                cell.uviImage.image = UIImage(named: String("Gray"))
-            }
-*/
             cell.selectionStyle = .none
             
             return cell
@@ -352,46 +225,8 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             cell.rainfallLbl.text? = weather.RAINFALL
             cell.wxLabel.text? = ""
             cell.selectionStyle = .none
-            
-/*
-            if pop ?? 0  >= 50{
-                cell.activityImg.image = #imageLiteral(resourceName: "umbrella")
-            }else if pop ?? 0 <= 10{
-                cell.activityImg.image = #imageLiteral(resourceName: "hanger")
-            }else if min ?? 0 <= 16{
-                cell.activityImg.image = #imageLiteral(resourceName: "scarf")
-            }else{
-                cell.activityImg.image = #imageLiteral(resourceName: "movie")
-            }
-            
-            if pop ?? 0 <= 50 && pop ?? 0 >= 10{
-                cell.activity_Img.image = #imageLiteral(resourceName: "moviePoP")
-            }
-            
-            // 穿著
-            if min ?? 0 <= 18{
-                cell.clothesImg.image = #imageLiteral(resourceName: "coat")
-            }else if min ?? 0 > 18 && min ?? 0 <= 26{
-                cell.clothesImg.image = #imageLiteral(resourceName: "sweater")
-            }else{
-                cell.clothesImg.image = #imageLiteral(resourceName: "shortQ")
-            }
-*/
+          
             return cell
-       
-        case "天氣警報":
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WarningCell", for: indexPath) as! WarningTableViewCell
-            cell.warning.text? = warning.warning ?? ""
-            cell.dateTimeLabel.text? = (warning.date ?? "") + "  " + (warning.time ?? "")
-            
-            cell.warningView.layer.cornerRadius = 10
-            cell.warningView.layer.shadowOffset = CGSize(width: 0, height: 5)
-            cell.warningView.layer.shadowOpacity = 0.7
-            cell.warningView.layer.shadowRadius = 5
-            cell.warningView.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0).cgColor
-            cell.selectionStyle = .none
-            return cell
-            
             
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -411,10 +246,6 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             return 250
         case "台北Bike":
             return 100
-        case "新北Bike", "新竹Bike", "苗栗Bike", "彰化Bike", "屏東Bike", "桃園Bike", "高雄Bike", "台南Bike", "台中Bike", "天氣警報":
-            return 100
-        case "新北市停車位":
-            return 120
         default:
             return 50
         }
@@ -448,17 +279,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     // 註冊Cell
     func registerCell(){
-        // mainTableView.register(UINib(nibName: "BasicTableViewCell", bundle: nil), forCellReuseIdentifier: "BasicCell")
         mainTableView.register(UINib(nibName: "HeaderSection", bundle: nil), forCellReuseIdentifier: "HeaderCell")
         mainTableView.register(UINib(nibName: "PriceTableViewCell", bundle: nil), forCellReuseIdentifier: "PriceCell")
-        
         mainTableView.register(UINib(nibName: "TemperatureTableViewCell", bundle: nil), forCellReuseIdentifier: "TemperatureCell")
         mainTableView.register(UINib(nibName: "AirQualityTableViewCell", bundle: nil), forCellReuseIdentifier: "AirQualityCell")
         mainTableView.register(UINib(nibName: "WeatherPicTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
         mainTableView.register(UINib(nibName: "TaipeiBikeTableViewCell", bundle: nil), forCellReuseIdentifier: "BikeCell")
-        mainTableView.register(UINib(nibName: "ParkNTPCTableViewCell", bundle: nil), forCellReuseIdentifier: "ParkCell")
-        mainTableView.register(UINib(nibName: "WarningTableViewCell", bundle: nil), forCellReuseIdentifier: "WarningCell")
-    
     }
     
     func locationEncode(address: String){
@@ -484,60 +310,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         switch tableViewSection[indexPath.section] {
         case "台北Bike":
-            userdefault.set("台北", forKey: "BikeMap")
             if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
                 present(controller, animated: true, completion: nil)
             }
-        case "新北Bike":
-            userdefault.set("新北", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "高雄Bike":
-            userdefault.set("高雄", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "新竹Bike":
-            userdefault.set("新竹", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "苗栗Bike":
-            userdefault.set("苗栗", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "彰化Bike":
-            userdefault.set("彰化", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "屏東Bike":
-            userdefault.set("屏東", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "台南Bike":
-            userdefault.set("台南", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "台中Bike":
-            userdefault.set("台中", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-        case "桃園Bike":
-            userdefault.set("桃園", forKey: "BikeMap")
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TaipeiMainNav") {
-                present(controller, animated: true, completion: nil)
-            }
-
         default:
             break
         }
-        
     }
     
     func locationManager(_ manger: CLLocationManager, didUpdateLocations location:[CLLocation]){
@@ -569,7 +347,6 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             })
         }else{
             let cities = userdefault.value(forKey: "Cities") as? [String] ?? ["目前位置"]
-            
             let city = String(cities[index].suffix(3))
             gpsLabel.text = city
         }
@@ -654,12 +431,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         default: break
             
         }
-       
     }
-    
 }
 
-// Btn in Cell
+
+// MARK:- CellButtonDelegate
+
 extension ViewController: CellButtonDelegate{
     
     func toDetail(title: String) {

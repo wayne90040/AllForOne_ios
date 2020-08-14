@@ -21,26 +21,20 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet weak var maxTLbl: UILabel!
     @IBOutlet weak var minTLbl: UILabel!
     @IBOutlet weak var uviPicImg: UIImageView!
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     var weather = Weather()
     
     // MARK: - view cyclelife
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        setData()
-        setView()
     }
     
     func setView(){
         weatherViewA.layer.cornerRadius = 10
         weatherViewB.layer.cornerRadius = 10
-        
-        
-    }
-    
-    
-    func setData(){
-//        var weatherDetail = userdefaults.dictionary(forKey: "Weather") as! [String: String]
         temValueLbl.text? = weather.TEMP
         uviValLbl.text? = weather.H_UVI
         windDirValLbl.text? = weather.WDIR
@@ -68,9 +62,7 @@ class WeatherDetailViewController: UIViewController {
             uviPicImg.image = UIImage(named: String("Gray"))
         }
  */
-       
     }
-    
     
     /*
     // MARK: - Navigation

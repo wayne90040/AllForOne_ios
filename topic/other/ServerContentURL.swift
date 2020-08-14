@@ -17,14 +17,6 @@ class ServerContentURL {
     static var aqi = ip + "AQI/"
     static var weather = ip + "Weather/"
     static var preweather = ip + "PreWeather"
-    
-//    static var aqi = ip + "aqi/"
-    
-    static var environmentalWarning = ip + "warning/"
-//    static var preweather = ip + "preweather/"
-    static var getAllBike = ip + "getAllBike/"
-    static var getCloseBike = ip + "getCloseBike/"
-    static var getParkNTPC = ip + "parkNTPC/"
-    static var warning = ip + "warning/"
+ 
 }
 

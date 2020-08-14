@@ -12,26 +12,23 @@ class SearchTableViewController: UITableViewController {
     let userdefault = UserDefaults.standard
     let pages: Int = 1
     var city = ["目前位置"]
+    @IBAction func toSearchBar(_ sender: Any) {
+        self.performSegue(withIdentifier: "toSearchBar", sender: self)
+    }
+    
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isEditing = true
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       
         city = userdefault.value(forKey: "Cities") as? [String] ?? ["目前位置"]
-      
-        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        // userdefault.set(city, forKey: "Cities") // 城市
-    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // city = userdefault.value(forKey: "ChooseCities") as! [String]
-    }
+    
 
     // MARK: - Table view data source
 
@@ -45,9 +42,6 @@ class SearchTableViewController: UITableViewController {
         return city.count
     }
     
-    @IBAction func toSearchBar(_ sender: Any) {
-        self.performSegue(withIdentifier: "toSearchBar", sender: self)
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -79,6 +73,9 @@ class SearchTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSearchBar"{
@@ -120,16 +117,6 @@ class SearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     */
 

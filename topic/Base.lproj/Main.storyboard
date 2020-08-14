@@ -149,7 +149,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcj-gU-aHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1741" y="862"/>
+            <point key="canvasLocation" x="-2988" y="869"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="6RP-GJ-PGG">
@@ -176,22 +176,27 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="lOC-fn-rvi">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="eUq-TB-cij">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QJm-WO-W3W">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QJm-WO-W3W">
                                 <rect key="frame" x="20" y="11" width="79" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="backward.fill" catalog="system"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" name="FontColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="f06-Qh-82i" kind="show" identifier="searchToMian" id="dqe-GA-3O1"/>
                                 </connections>
                             </button>
+                            <color key="tintColor" name="FontColor"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wc6-FV-zvH">
-                            <button key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l3g-Nt-opk">
+                            <button key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l3g-Nt-opk">
                                 <rect key="frame" x="105" y="0.0" width="289" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="plus.magnifyingglass" catalog="system"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" name="FontColor"/>
+                                </state>
                                 <connections>
                                     <action selector="toSearchBar:" destination="gwB-tQ-5kr" eventType="touchUpInside" id="dFX-vK-797"/>
                                 </connections>
@@ -204,7 +209,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0U-LP-2L3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="984"/>
+            <point key="canvasLocation" x="281" y="994"/>
         </scene>
         <!--Search Bar View Controller-->
         <scene sceneID="GFj-xP-neL">
@@ -1125,12 +1130,11 @@
                         <viewLayoutGuide key="safeArea" id="iqd-bh-gh7"/>
                     </view>
                     <navigationItem key="navigationItem" title="現在天氣" id="75W-I0-oX9">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="l67-T1-ORx">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="frF-RS-LDW">
-                                <rect key="frame" x="20" y="13" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="s8g-0l-8bU">
+                            <color key="tintColor" name="FontColor"/>
+                            <connections>
+                                <action selector="cancelAction:" destination="yd6-w4-uUV" id="1Nz-RU-vhL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
@@ -1198,7 +1202,9 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IFD-yB-6ag">
                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" name="FontColor"/>
+                                </state>
                                 <connections>
                                     <action selector="toMain:" destination="BD8-pQ-oxJ" eventType="touchUpInside" id="dch-Vb-MVz"/>
                                 </connections>
@@ -1298,7 +1304,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yu-ax-UZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-459" y="985"/>
+            <point key="canvasLocation" x="-1307" y="1063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PRJ-0M-33z">
@@ -1321,10 +1327,8 @@
     </scenes>
     <resources>
         <image name="Row" width="361" height="2"/>
-        <image name="backward.fill" catalog="system" width="64" height="38"/>
         <image name="column" width="1" height="45"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
-        <image name="plus.magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="settings" width="16" height="16"/>
         <namedColor name="BackGround">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1334,7 +1338,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c8A-3j-LXR"/>
+        <segue reference="dqe-GA-3O1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="BackGround"/>
 </document>

@@ -20,10 +20,6 @@
 		0D0F0F5F22FD6079005C4B58 /* TemperatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F0F5D22FD6079005C4B58 /* TemperatureTableViewCell.swift */; };
 		0D1752E822925815006A4431 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1752E622925815006A4431 /* BasicTableViewCell.swift */; };
 		0D1752E922925815006A4431 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1752E722925815006A4431 /* BasicTableViewCell.xib */; };
-		0D201E6A2379A35200B401B0 /* WarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D201E682379A35200B401B0 /* WarningTableViewCell.swift */; };
-		0D201E6B2379A35200B401B0 /* WarningTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D201E692379A35200B401B0 /* WarningTableViewCell.xib */; };
-		0D201E6D2379A75F00B401B0 /* WarningPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D201E6C2379A75F00B401B0 /* WarningPresenter.swift */; };
-		0D201E6F2379A8A000B401B0 /* WarningMoudel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D201E6E2379A8A000B401B0 /* WarningMoudel.swift */; };
 		0D2A45CE234B772F00B04F13 /* ViewControllerBaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A45CD234B772F00B04F13 /* ViewControllerBaseDelegate.swift */; };
 		0D2A45D2234B7A9600B04F13 /* ServerContentURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A45D1234B7A9600B04F13 /* ServerContentURL.swift */; };
 		0D2A45D4234B7B5E00B04F13 /* GasPricePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A45D3234B7B5E00B04F13 /* GasPricePresenter.swift */; };
@@ -46,7 +42,6 @@
 		0DA0AF2A23694EAA007F1D8B /* TaipeiBikeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0AF2923694EAA007F1D8B /* TaipeiBikeMainViewController.swift */; };
 		0DA0AF2D2369AEB9007F1D8B /* TaipeiBikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0AF2B2369AEB9007F1D8B /* TaipeiBikeTableViewCell.swift */; };
 		0DA0AF2E2369AEB9007F1D8B /* TaipeiBikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0AF2C2369AEB9007F1D8B /* TaipeiBikeTableViewCell.xib */; };
-		0DA0AF302369B83C007F1D8B /* TaipeiCloseBikePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0AF2F2369B83C007F1D8B /* TaipeiCloseBikePresenter.swift */; };
 		0DB7BA742294515A00EA24C8 /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7BA722294515A00EA24C8 /* HeaderSection.swift */; };
 		0DB7BA752294515A00EA24C8 /* HeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7BA732294515A00EA24C8 /* HeaderSection.xib */; };
 		0DCD295E228F2DD600820543 /* firstview.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DCD295D228F2DD600820543 /* firstview.json */; };
@@ -61,12 +56,6 @@
 		0DDCD0162371CB5200598D10 /* WeatherMoudel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDCD0152371CB5200598D10 /* WeatherMoudel.swift */; };
 		0DDCD0182371CBA800598D10 /* BikeMoudel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDCD0172371CBA800598D10 /* BikeMoudel.swift */; };
 		0DE2B876235606EE00C65A27 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE2B875235606EE00C65A27 /* art.scnassets */; };
-		0DEBA69E2377DEF200F9ECA9 /* parkNTPCMoudel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEBA69D2377DEF200F9ECA9 /* parkNTPCMoudel.swift */; };
-		0DEBA6A12377E18300F9ECA9 /* ParkNTPCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEBA69F2377E18300F9ECA9 /* ParkNTPCTableViewCell.swift */; };
-		0DEBA6A22377E18300F9ECA9 /* ParkNTPCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBA6A02377E18300F9ECA9 /* ParkNTPCTableViewCell.xib */; };
-		0DEBA6A42377F08F00F9ECA9 /* ParkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEBA6A32377F08F00F9ECA9 /* ParkPresenter.swift */; };
-		0DEBA6A62378052300F9ECA9 /* NTPCMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEBA6A52378052300F9ECA9 /* NTPCMapViewController.swift */; };
-		0DF731DC2354BE70001259FF /* EnvironmentalWarningPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF731DB2354BE70001259FF /* EnvironmentalWarningPresenter.swift */; };
 		0DF731DE2355BB2A001259FF /* ARView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF731DD2355BB2A001259FF /* ARView.storyboard */; };
 		0DF731E02355BBDE001259FF /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF731DF2355BBDE001259FF /* ARViewController.swift */; };
 		0DFBDD68235C3A7C00EB1076 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBDD67235C3A7C00EB1076 /* WeatherDetailViewController.swift */; };
@@ -110,10 +99,6 @@
 		0D0F0F5D22FD6079005C4B58 /* TemperatureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureTableViewCell.swift; sourceTree = "<group>"; };
 		0D1752E622925815006A4431 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		0D1752E722925815006A4431 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
-		0D201E682379A35200B401B0 /* WarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningTableViewCell.swift; sourceTree = "<group>"; };
-		0D201E692379A35200B401B0 /* WarningTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WarningTableViewCell.xib; sourceTree = "<group>"; };
-		0D201E6C2379A75F00B401B0 /* WarningPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningPresenter.swift; sourceTree = "<group>"; };
-		0D201E6E2379A8A000B401B0 /* WarningMoudel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningMoudel.swift; sourceTree = "<group>"; };
 		0D2A45CD234B772F00B04F13 /* ViewControllerBaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBaseDelegate.swift; sourceTree = "<group>"; };
 		0D2A45D1234B7A9600B04F13 /* ServerContentURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerContentURL.swift; sourceTree = "<group>"; };
 		0D2A45D3234B7B5E00B04F13 /* GasPricePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasPricePresenter.swift; sourceTree = "<group>"; };
@@ -136,7 +121,6 @@
 		0DA0AF2923694EAA007F1D8B /* TaipeiBikeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaipeiBikeMainViewController.swift; sourceTree = "<group>"; };
 		0DA0AF2B2369AEB9007F1D8B /* TaipeiBikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaipeiBikeTableViewCell.swift; sourceTree = "<group>"; };
 		0DA0AF2C2369AEB9007F1D8B /* TaipeiBikeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaipeiBikeTableViewCell.xib; sourceTree = "<group>"; };
-		0DA0AF2F2369B83C007F1D8B /* TaipeiCloseBikePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaipeiCloseBikePresenter.swift; sourceTree = "<group>"; };
 		0DB7BA722294515A00EA24C8 /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
 		0DB7BA732294515A00EA24C8 /* HeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSection.xib; sourceTree = "<group>"; };
 		0DCD295D228F2DD600820543 /* firstview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = firstview.json; path = topic/firstview.json; sourceTree = SOURCE_ROOT; };
@@ -157,12 +141,6 @@
 		0DDCD0152371CB5200598D10 /* WeatherMoudel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMoudel.swift; sourceTree = "<group>"; };
 		0DDCD0172371CBA800598D10 /* BikeMoudel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeMoudel.swift; sourceTree = "<group>"; };
 		0DE2B875235606EE00C65A27 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		0DEBA69D2377DEF200F9ECA9 /* parkNTPCMoudel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parkNTPCMoudel.swift; sourceTree = "<group>"; };
-		0DEBA69F2377E18300F9ECA9 /* ParkNTPCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkNTPCTableViewCell.swift; sourceTree = "<group>"; };
-		0DEBA6A02377E18300F9ECA9 /* ParkNTPCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkNTPCTableViewCell.xib; sourceTree = "<group>"; };
-		0DEBA6A32377F08F00F9ECA9 /* ParkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkPresenter.swift; sourceTree = "<group>"; };
-		0DEBA6A52378052300F9ECA9 /* NTPCMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTPCMapViewController.swift; sourceTree = "<group>"; };
-		0DF731DB2354BE70001259FF /* EnvironmentalWarningPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalWarningPresenter.swift; sourceTree = "<group>"; };
 		0DF731DD2355BB2A001259FF /* ARView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARView.storyboard; sourceTree = "<group>"; };
 		0DF731DF2355BBDE001259FF /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		0DFBDD67235C3A7C00EB1076 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
@@ -264,10 +242,6 @@
 				0D0D9EFF235A2233006FAE27 /* WeatherCollectionViewCell.xib */,
 				0DA0AF2B2369AEB9007F1D8B /* TaipeiBikeTableViewCell.swift */,
 				0DA0AF2C2369AEB9007F1D8B /* TaipeiBikeTableViewCell.xib */,
-				0DEBA69F2377E18300F9ECA9 /* ParkNTPCTableViewCell.swift */,
-				0DEBA6A02377E18300F9ECA9 /* ParkNTPCTableViewCell.xib */,
-				0D201E682379A35200B401B0 /* WarningTableViewCell.swift */,
-				0D201E692379A35200B401B0 /* WarningTableViewCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -279,13 +253,9 @@
 				0D2A45D3234B7B5E00B04F13 /* GasPricePresenter.swift */,
 				0D2A45D5234B7CAE00B04F13 /* BasePresenter.swift */,
 				0D2A45E5234C7EAC00B04F13 /* WeatherPresenter.swift */,
-				0DF731DB2354BE70001259FF /* EnvironmentalWarningPresenter.swift */,
 				0D0D9EF4235A0833006FAE27 /* PreWeatherPresenter.swift */,
 				0DA0AF2523694C91007F1D8B /* BikePresenter.swift */,
-				0DA0AF2F2369B83C007F1D8B /* TaipeiCloseBikePresenter.swift */,
 				0D79138F236B377F0052760E /* MyAnnotation.swift */,
-				0DEBA6A32377F08F00F9ECA9 /* ParkPresenter.swift */,
-				0D201E6C2379A75F00B401B0 /* WarningPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -296,7 +266,6 @@
 				0DDCD0192371E58600598D10 /* Bike */,
 				0D2A45ED234C8DA200B04F13 /* Detail */,
 				0DD6DA4F228968FF00D6E755 /* ViewController.swift */,
-				0DEBA6A52378052300F9ECA9 /* NTPCMapViewController.swift */,
 				0DD6DA87228C0CE300D6E755 /* TableViewSectionset.swift */,
 				0D85EBA1228F13DF0011033D /* FirstViewController.swift */,
 				0DF731DF2355BBDE001259FF /* ARViewController.swift */,
@@ -404,8 +373,6 @@
 			children = (
 				0DDCD0152371CB5200598D10 /* WeatherMoudel.swift */,
 				0DDCD0172371CBA800598D10 /* BikeMoudel.swift */,
-				0DEBA69D2377DEF200F9ECA9 /* parkNTPCMoudel.swift */,
-				0D201E6E2379A8A000B401B0 /* WarningMoudel.swift */,
 				2DFF300624D30CC00010D78F /* GasPriceMoudel.swift */,
 				2DFF300824D71BF40010D78F /* AQIMoudel.swift */,
 			);
@@ -560,13 +527,11 @@
 				0D0D9EFD235A21C9006FAE27 /* WeatherCollectionTableViewCell.xib in Resources */,
 				0DB7BA752294515A00EA24C8 /* HeaderSection.xib in Resources */,
 				0DD6DA582289690000D6E755 /* LaunchScreen.storyboard in Resources */,
-				0DEBA6A22377E18300F9ECA9 /* ParkNTPCTableViewCell.xib in Resources */,
 				0D1752E922925815006A4431 /* BasicTableViewCell.xib in Resources */,
 				0DD6DA552289690000D6E755 /* Assets.xcassets in Resources */,
 				0DCD295E228F2DD600820543 /* firstview.json in Resources */,
 				0D85EBA0228F123A0011033D /* FirstView.storyboard in Resources */,
 				0DD6DA53228968FF00D6E755 /* Main.storyboard in Resources */,
-				0D201E6B2379A35200B401B0 /* WarningTableViewCell.xib in Resources */,
 				0D0F0F5E22FD6079005C4B58 /* TemperatureTableViewCell.xib in Resources */,
 				0D0D9EF323597712006FAE27 /* WeatherPicTableViewCell.xib in Resources */,
 				0DFE4BBF22E3065900215521 /* AirQualityTableViewCell.xib in Resources */,
@@ -670,9 +635,6 @@
 				0D0D9EF5235A0833006FAE27 /* PreWeatherPresenter.swift in Sources */,
 				0D2A45CE234B772F00B04F13 /* ViewControllerBaseDelegate.swift in Sources */,
 				0D2A45E6234C7EAC00B04F13 /* WeatherPresenter.swift in Sources */,
-				0D201E6F2379A8A000B401B0 /* WarningMoudel.swift in Sources */,
-				0D201E6A2379A35200B401B0 /* WarningTableViewCell.swift in Sources */,
-				0DF731DC2354BE70001259FF /* EnvironmentalWarningPresenter.swift in Sources */,
 				0D0D9EFC235A21C9006FAE27 /* WeatherCollectionTableViewCell.swift in Sources */,
 				0D2A45D6234B7CAE00B04F13 /* BasePresenter.swift in Sources */,
 				0D56178822D6168900EABB00 /* PriceTableViewCell.swift in Sources */,
@@ -680,7 +642,6 @@
 				0D1752E822925815006A4431 /* BasicTableViewCell.swift in Sources */,
 				0DA0AF2623694C91007F1D8B /* BikePresenter.swift in Sources */,
 				0DDCD0162371CB5200598D10 /* WeatherMoudel.swift in Sources */,
-				0DEBA6A12377E18300F9ECA9 /* ParkNTPCTableViewCell.swift in Sources */,
 				2DFF300724D30CC00010D78F /* GasPriceMoudel.swift in Sources */,
 				0DDCD0182371CBA800598D10 /* BikeMoudel.swift in Sources */,
 				0DFE4BBE22E3065900215521 /* AirQualityTableViewCell.swift in Sources */,
@@ -691,24 +652,19 @@
 				0D2A45D2234B7A9600B04F13 /* ServerContentURL.swift in Sources */,
 				0D85EBA2228F13DF0011033D /* FirstViewController.swift in Sources */,
 				0D0D9F08235AF02F006FAE27 /* AqiDetailViewController.swift in Sources */,
-				0DEBA6A42377F08F00F9ECA9 /* ParkPresenter.swift in Sources */,
 				0D791398236D7FC10052760E /* SearchTableViewController.swift in Sources */,
 				0D2A45E4234C6BE800B04F13 /* AqiPresenter.swift in Sources */,
-				0D201E6D2379A75F00B401B0 /* WarningPresenter.swift in Sources */,
 				0D0D9EF223597712006FAE27 /* WeatherPicTableViewCell.swift in Sources */,
 				0D791396236D5E560052760E /* SearchBarViewController.swift in Sources */,
 				0D2A45D8234B7D5800B04F13 /* UrlSessionDelegate.swift in Sources */,
-				0DEBA6A62378052300F9ECA9 /* NTPCMapViewController.swift in Sources */,
 				0DF731E02355BBDE001259FF /* ARViewController.swift in Sources */,
 				0D791390236B377F0052760E /* MyAnnotation.swift in Sources */,
 				0D2A45DC234B80D300B04F13 /* JSONBuilder.swift in Sources */,
 				0DA0AF2A23694EAA007F1D8B /* TaipeiBikeMainViewController.swift in Sources */,
 				0D2A45DA234B7E8C00B04F13 /* UrlSession.swift in Sources */,
 				0D0F0F5F22FD6079005C4B58 /* TemperatureTableViewCell.swift in Sources */,
-				0DEBA69E2377DEF200F9ECA9 /* parkNTPCMoudel.swift in Sources */,
 				0DFBDD68235C3A7C00EB1076 /* WeatherDetailViewController.swift in Sources */,
 				0DA0AF2D2369AEB9007F1D8B /* TaipeiBikeTableViewCell.swift in Sources */,
-				0DA0AF302369B83C007F1D8B /* TaipeiCloseBikePresenter.swift in Sources */,
 				0DD6DA4E228968FF00D6E755 /* AppDelegate.swift in Sources */,
 				0D791394236B69B10052760E /* MainPageViewController.swift in Sources */,
 				0D2A45D4234B7B5E00B04F13 /* GasPricePresenter.swift in Sources */,
